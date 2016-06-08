@@ -1,0 +1,6 @@
+€}q(Uioteca_service_apps.auths.enums]q(UWEBqUFUMUGENRE_CHOICESqUOTHERqUMODULE_CHOICESqUHIERARCHY_TYPE_CHOICESqUADMISIONqUBACKENDq	eU,ioteca_service_apps.auths.UserHierarchyGroup]q
+UUserHierarchyGroupqaU%ioteca_service_apps.utils.permissions]q(UModelPermissionqUlogqeU"ioteca_service_apps.utils.security]q(hU
+log_paramsqeU"ioteca_service_apps.docentes.views]q(UCategoriaDocenteViewSetqUCategoriaDocenteSerializerqeU#ioteca_service_apps.docentes.models]qUCategoriaDocenteqaU!ioteca_service_apps.docentes.urls]q(UurlpatternsqUrouterqeU"ioteca_service_apps.docentes.admin]Uioteca_main.settings]q(U	DATABASESqUMIDDLEWARE_CLASSESqUROOT_URLCONFqULANGUAGE_CODEqUUSE_I18NqUAUTH_USER_MODELqU
+SECRET_KEYq UCORS_ORIGIN_WHITELISTq!U	TEMPLATESq"U	TIME_ZONEq#UCORS_ORIGIN_ALLOW_ALLq$UWSGI_APPLICATIONq%UALLOWED_HOSTSq&UBASE_DIRq'UAUTH_PASSWORD_VALIDATORSq(UCORS_ALLOW_CREDENTIALSq)U
+STATIC_URLq*UUSE_L10Nq+UDEBUGq,UUSE_TZq-UFIXTURE_DIRSq.UINSTALLED_APPSq/ULOGGINGq0U
+MEDIA_ROOTq1UREST_FRAMEWORKq2U	MEDIA_URLq3eUioteca_main.urls]q4Uurlpatternsq5aU+ioteca_service_apps.auths_api.api_user_menu]q6(UCustomSerializerq7hUUserMenuViewq8UMenuInfoSerializerq9eU1ioteca_service_apps.auths.UserHierarchyPermission]q:UUserHierarchyPermissionq;au.
