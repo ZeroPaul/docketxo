@@ -38,7 +38,7 @@ class MenuSerializer(serializers.ModelSerializer):
 class MenuViewSet(ModelPagination, viewsets.ModelViewSet):  # ModelPagination
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
-    permission_classes = [ModelPermission, ]
+#    permission_classes = [ModelPermission, ]
 
     def get_queryset(self):
         '''

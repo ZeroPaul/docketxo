@@ -25,3 +25,20 @@ class CategoriaDocente(models.Model):
 
     def __str__(self):
         return self.catedra
+
+class RegimenDocente(models.Model):
+    REGIMEN_DOCENTE=(
+    ('DX', 'Dedicacion Exclusiva'),
+    ('TC', 'Tiempo Completo'),
+    ('TP', 'Tiempo Parcial'),
+    ('PA', 'Pasantia'),
+    ('PC', 'Practicante'),
+    )
+    tipo_regimen=models.CharField(max_length=2, choices=REGIMEN_DOCENTE)
+
+    class Meta:
+        verbose_name = "Regimen Docente"
+        verbose_name_plural = "Regimen Docentes"
+
+    def __str__(self):
+        return u"%s" % (self.get_tipo_regimen_display())

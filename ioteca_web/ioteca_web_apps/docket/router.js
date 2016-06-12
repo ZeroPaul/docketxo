@@ -31,7 +31,7 @@ app
     .state("dock.docente", {
         url: "/docente",
         data: { section: 'DocketPro', page: 'Docentes' },
-        templateUrl: "ioteca_web_apps/docket/views/test.html",
+        templateUrl: "ioteca_web_apps/docket/views/docente/index.html",
     })
     
     // .state("dock.test", {

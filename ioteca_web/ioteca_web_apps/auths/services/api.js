@@ -2,6 +2,7 @@ app
 
     .factory("API", function($resource, config_auths) {
     var url = config_auths.authsUrl;
+    console.log("Yarette");
     return {
         Categoria: $resource(url + "categorias/:id/", { 'id': '@id' }, {
             "update": { method: 'PUT' },

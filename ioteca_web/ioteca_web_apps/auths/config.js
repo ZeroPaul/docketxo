@@ -12,3 +12,5 @@ var config = {
 app
 
 .value('config_auths', config);
+
+console.log(config)
