@@ -1,7 +1,6 @@
-
 app
 
-    .controller("MenuCtrl", function($scope, API, $window, $stateParams, $mdDialog, $log, toastr) {
+    .controller("ExperienciaCtrl", function($scope, API, $window, $stateParams, $mdDialog, $log, toastr) {
 
     //Valores iniciales
     var params = {};
@@ -9,6 +8,14 @@ app
     params.page_size = 5;
     $scope.lista = [];
     $scope.menu = {};
+    $scope.myDate = new Date();
+
+
+    var date = new Date();
+    var day = date.getDate();
+    var monthIndex = date.getMonth();
+    var year = date.getFullYear();
+    console.log(day +"  "+ monthIndex +"  "+ year)
 
     $scope.list = function(params) {
         //logService.error('yeeeeeeeee');
@@ -22,7 +29,7 @@ app
 
         console.log("page_size: " + params.page_size);
         //API.Menu.list({ query: $scope.query, page: page }).$promise.then(function(r) {
-        API.Menu.list(params).$promise.then(function(r) {
+        API.Experiencia.list(params).$promise.then(function(r) {
 
             $scope.lista = r.results;
             $scope.options = r.options;
@@ -33,21 +40,6 @@ app
     };
 
     $scope.list(params);
-
-    $scope.choices = function() {
-        API.Menu.options().$promise.then(function(r) {
-            $scope.modules = r.module.choices;
-            $scope.types = r.type.choices;
-            $scope.parents = r.parent.choices;
-            console.log("$modules" + $scope.modules[0].value);
-            console.log("$parents" + $scope.parents);
-        }, function(err) {
-            console.log("Error in choices:" +  JSON.stringify(err));
-        });
-    };
-
-    //$scope.choices();
-
 
     $scope.buscar = function() {
         params.page = 1;
@@ -80,7 +72,7 @@ app
         $mdDialog.show({
             scope: $scope,
             targetEvent: evt,
-            templateUrl: 'ioteca_web_apps/auths/views/menu/formd.html',
+            templateUrl: 'ioteca_web_apps/docket/views/experiencia/form.html',
             parent: angular.element(document.body),
             clickOutsideToClose: false,
             preserveScope: true,
@@ -96,10 +88,10 @@ app
 
 
     $scope.sel = function(d) {
-        $scope.menu = API.Menu.get({ id: d.id });
+        $scope.menu = API.Experiencia.get({ id: d.id });
         $mdDialog.show({
             scope: $scope,
-            templateUrl: 'ioteca_web_apps/auths/views/menu/formd.html',
+            templateUrl: 'ioteca_web_apps/docket/views/experiencia/form.html',
             parent: angular.element(document.body),
             clickOutsideToClose: false,
             preserveScope: true,
@@ -113,7 +105,7 @@ app
     $scope.save = function() {
         if ($scope.menu.id) {
 
-            API.Menu.update({ id: $scope.menu.id }, $scope.menu).$promise.then(function(r) {
+            API.Experiencia.update({ id: $scope.menu.id }, $scope.menu).$promise.then(function(r) {
                 console.log("r: " + r);
                 //$scope.list();
                 $mdDialog.hide();
@@ -122,7 +114,7 @@ app
             });
 
         } else {
-            API.Menu.save($scope.menu).$promise.then(function(r) {
+            API.Experiencia.save($scope.menu).$promise.then(function(r) {
                 console.log("r: " + r);
                 //$scope.list();
                 $mdDialog.hide();
@@ -133,8 +125,8 @@ app
     };
 
     $scope.delete = function(d) {
-        if ($window.confirm("Seguro?")) {
-            API.Menu.delete({ id: d.id }).$promise.then(function(r) {
+        if ($window.confirm("Seguro yolo que borras " + d.id + "?")) {
+            API.Experiencia.delete({ id: d.id }).$promise.then(function(r) {
                 console.log("r: " + r);
                 $scope.list(params);
             }, function(err) {
@@ -144,5 +136,4 @@ app
     };
 
 
-});
-
+}); 

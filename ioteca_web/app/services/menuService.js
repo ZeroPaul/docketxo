@@ -69,11 +69,11 @@ app
                 state: 'dock.docente',
                 type: 'link'
             }, 
-                // {
-                // title: 'Test docent',
-                // state: 'dock.test',
-                // type: 'link'
-                // },
+                {
+                title: 'ExperienciaAcademico',
+                state: 'dock.experiencia',
+                type: 'link'
+                },
             ]
         }]
     });

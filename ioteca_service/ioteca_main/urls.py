@@ -25,4 +25,5 @@ urlpatterns = [
 
     url(r'^api/auths/', include('ioteca_service_apps.auths_api.urls')),
     url(r'^api/io/', include('ioteca_service_apps.docentes.urls')),
+    url(r'^api/io/', include('ioteca_service_apps.experiencia.urls', namespace='io')),
 ]

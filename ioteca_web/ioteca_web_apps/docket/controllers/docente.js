@@ -4,38 +4,33 @@ app
 
     //Valores iniciales
     var params = {};
+
     params.page = $stateParams.page ? $stateParams.page : 1;
-    params.page_size = 5;
+    params.page_size = 5; 
+
     $scope.lista = [];
-    $scope.menu = {};
+    $scope.docente = {};
     
     $scope.list = function(params) {
-        //logService.error('yeeeeeeeee');
-
-        $log.log('log message');
-        $log.debug('debug message');
-        $log.info('info message');
-        $log.warn('warn message');
-        //$log.error('error message');
-        //throw Error('gone wrong in greet');
-
-        console.log("page_size: " + params.page_size);
-        //API.Menu.list({ query: $scope.query, page: page }).$promise.then(function(r) {
+        $scope.isLoading = true;
+        
+        //API.Permission.list({ query: $scope.query, page: page }).$promise.then(function(r) {
         API.Docente.list(params).$promise.then(function(r) {
-
             $scope.lista = r.results;
             $scope.options = r.options;
+
+            $scope.isLoading = false;
+
         }, function(err) {
-            console.log("Error in list:" +  JSON.stringify(err));
+            console.log("Error in list:" + JSON.stringify(err));
             toastr.error(err.data.results.detail, err.status + ' ' + err.statusText);
         });
     };
-
     $scope.list(params);
-
+ 
     $scope.buscar = function() {
         params.page = 1;
-        params.fields = 'module,title,state';
+        params.fields = 'catedra, lugar';
         params.query = $scope.query;
         params.page_size = $scope.per;
         $scope.list(params);
@@ -59,8 +54,8 @@ app
     };
 
     $scope.new = function(evt) {
-        $scope.menu.id = null;
-        $scope.menu = {};
+        $scope.docente.id = null;
+        $scope.docente = {};
         $mdDialog.show({
             scope: $scope,
             targetEvent: evt,
@@ -80,7 +75,7 @@ app
 
 
     $scope.sel = function(d) {
-        $scope.menu = API.Docente.get({ id: d.id });
+        $scope.docente = API.Docente.get({ id: d.id });
         $mdDialog.show({
             scope: $scope,
             templateUrl: 'ioteca_web_apps/docket/views/docente/form.html',
@@ -89,15 +84,15 @@ app
             preserveScope: true,
         }).then(function() {
             $scope.list(params);
-            $scope.menu = {};
+            $scope.docente = {};
         }, function() {});
     };
 
 
     $scope.save = function() {
-        if ($scope.menu.id) {
+        if ($scope.docente.id) {
 
-            API.Docente.update({ id: $scope.menu.id }, $scope.menu).$promise.then(function(r) {
+            API.Docente.update({ id: $scope.docente.id }, $scope.docente).$promise.then(function(r) {
                 console.log("r: " + r);
                 //$scope.list();
                 $mdDialog.hide();
@@ -106,7 +101,7 @@ app
             });
 
         } else {
-            API.Docente.save($scope.menu).$promise.then(function(r) {
+            API.Docente.save($scope.docente).$promise.then(function(r) {
                 console.log("r: " + r);
                 //$scope.list();
                 $mdDialog.hide();

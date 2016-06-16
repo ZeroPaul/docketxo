@@ -4,9 +4,9 @@
         <md-toolbar>
             <div class="md-toolbar-tools">
                 <h2>
-                    <span ng-hide="docente.id == null">Editar </span>
-                    <span ng-hide="docente.id">Nueva </span>
-                    Categoria {{docente.id}} 
+                    <span ng-hide="menu.id == null">Editar </span>
+                    <span ng-hide="menu.id">Nueva </span>
+                    Experiencia {{menu.id}} 
                     
                 </h2>
                 <span flex></span>
@@ -20,24 +20,21 @@
             <div class="md-dialog-content">
                 <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
-                        <label>Catedra</label>
-                        <input ng-model="docente.catedra" required>
+                        <label>Certificado</label>
+                        <input ng-model="menu.certificado" required>
                     </md-input-container>
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Institucion</label>
-                        <input ng-model="docente.institucion">
+                        <input ng-model="menu.institucion">
                     </md-input-container>
                     <md-input-container class="md-block" flex-gt-sm>
-                        <label>Lugar</label>
-                        <input ng-model="docente.lugar">
+                        <label>F. Inicio</label>
+                        <input ng-model="menu.date_inicio">
                     </md-input-container> 
-                    <md-input-container  class="md-block" flex-gt-sm>
-                    <label>Categoria</label>
-                    <md-select ng-model="docente.tipo_categoria" required>
-                        <md-option value="AS">Asociado</md-option>
-                        <md-option value="AX">Auxiliar</md-option>
-                        <md-option value="P">Principal</md-option>
-                  </md-select>
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>F. Fin</label>
+                        <input ng-model="menu.date_fin">
+                    </md-input-container> 
                 </div>
         </md-dialog-content>
         <md-dialog-actions layout="row">
@@ -48,4 +45,4 @@
             </md-button>
         </md-dialog-actions>
     </form>
-</md-dialog> 
+</md-dialog>  

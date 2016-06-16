@@ -34,11 +34,11 @@ app
         templateUrl: "ioteca_web_apps/docket/views/docente/index.html",
     })
     
-    // .state("dock.test", {
-    //     url: "/ct",
-    //     data: { section: 'System', page: 'Document' },
-    //     templateUrl: "ioteca_web_apps/docket/views/test.html"
-    // }) 
+    .state("dock.experiencia", {
+        url: "/experiencia",
+        data: { section: 'DocketPro', page: 'Experiencia' },
+        templateUrl: "ioteca_web_apps/docket/views/experiencia/index.html"
+    }) 
 
    
     ;

@@ -1,11 +1,11 @@
 <div ng-cloak>
     <md-content class="md-padding" layout-xs="column">
         <div flex-xs flex-gt-xs>
-            <md-card ng-controller="DocenteCtrl">
+            <md-card ng-controller="ExperienciaCtrl">
                 <md-card-title>
                     <md-card-title-text>
-                        <span class="md-headline">Trabajar con Docente</span>
-                        <span class="md-subhead">CRUD Docente</span>
+                        <span class="md-headline">Trabajar con Experiencia Academica</span>
+                        <span class="md-subhead">CRUD Experiencia Academica</span>
                     </md-card-title-text>
                 </md-card-title>
                 <md-divider></md-divider>
@@ -22,7 +22,7 @@
                         <md-button class="md-fab md-mini md-warn" aria-label="Add" ng-click="new($event)">
                             <md-tooltip md-autohide>Add</md-tooltip>
                             <ng-md-icon icon="add" aria-label="title"></ng-md-icon>
-                        </md-button>  
+                        </md-button> 
                     </md-card-icon-actions>
                     <span flex></span>
                     <md-card-icon-actions layout-align="end center">
@@ -38,10 +38,11 @@
                         <thead md-head>
                             <tr md-row>
                                 <th md-column>#</th>
-                                <th md-column md:order:by="name">Catedra</th>
+                                <th md-column md:order:by="name">Certificado</th>
                                 <th md-column md:order:by="name">Institucion</th>
-                                <th md-column md:order:by="name">Lugar</th>
-                                <th md-column>Categoria</th>
+                                <th md-column md:order:by="name">F. Inicio</th>
+                                <th md-column md:order:by="name">F. Fin</th>
+                                <th md-column>Resolucion</th>
                                 <th md-column colspan='' align='center'>acciones</th>
                                 <th md-column colspan='' align='center'>acciones</th>
                             </tr>
@@ -49,10 +50,11 @@
                         <tbody md-body>
                         <tr md-row ng-repeat="d in lista">
                                 <td md-cell>{{ (options.page - 1) * options.page_size +$index +1 }}</td>
-                                <td md-cell> {{ d.catedra }}</td>
+                                <td md-cell> {{ d.certificado }}</td>
                                 <td md-cell> {{ d.institucion }}</td>
-                                <td md-cell> {{ d.lugar }}</td>
-                                <td md-cell> {{ d.tipo_categoria }}</td>
+                                <td md-cell> {{ d.date_inicio }}</td>
+                                <td md-cell> {{ d.date_fin }}</td>
+                                <td md-cell> {{ d.resolucion }}</td>
                                 <td md-cell>
                                     <md-button class="md-icon-button" aria-label="Edit" ng-click="sel(d)">
                                         <md-tooltip md-autohide>Edit {{ d.nombre }}</md-tooltip>
@@ -95,4 +97,4 @@
             </md-card>
         </div>
     </md-content>
-</div> 
+</div>  
