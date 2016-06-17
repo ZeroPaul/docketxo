@@ -33,6 +33,12 @@ app
         data: { section: 'DocketPro', page: 'Docentes' },
         templateUrl: "ioteca_web_apps/docket/views/docente/index.html",
     })
+
+    .state("dock.reconocimiento", {
+        url: "/reconocimiento",
+        data: { section: 'DocketPro', page: 'Reconocimientos' },
+        templateUrl: "ioteca_web_apps/docket/views/reconocimientos/index.html",
+    })
     
     .state("dock.experiencia", {
         url: "/experiencia",

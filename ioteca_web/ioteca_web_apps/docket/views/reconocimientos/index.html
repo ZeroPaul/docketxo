@@ -1,11 +1,11 @@
 <div ng-cloak>
     <md-content class="md-padding" layout-xs="column">
         <div flex-xs flex-gt-xs>
-            <md-card ng-controller="DocenteCtrl">
+            <md-card ng-controller="ReconocimientoCtrl">
                 <md-card-title>
                     <md-card-title-text>
-                        <span class="md-headline">Trabajar con Docente</span>
-                        <span class="md-subhead">CRUD Docente</span>
+                        <span class="md-headline">Trabajar con Reconocimientos</span>
+                        <span class="md-subhead">CRUD Reconocimientos</span>
                     </md-card-title-text>
                 </md-card-title>
                 <md-divider></md-divider>
@@ -21,8 +21,8 @@
                         </md-button>
                         <md-button class="md-fab md-mini md-warn" aria-label="Add" ng-click="new($event)">
                             <md-tooltip md-autohide>Add</md-tooltip>
-                            <ng-md-icon icon="add" aria-label="Add"></ng-md-icon>
-                        </md-button>  
+                            <ng-md-icon icon="add" aria-label="title"></ng-md-icon>
+                        </md-button>
                     </md-card-icon-actions>
                     <span flex></span>
                     <md-card-icon-actions layout-align="end center">
@@ -38,30 +38,31 @@
                         <thead md-head>
                             <tr md-row>
                                 <th md-column>#</th>
-                                <th md-column md:order:by="name">Catedra</th>
-                                <th md-column md:order:by="name">Institucion</th>
-                                <th md-column md:order:by="name">Lugar</th>
-                                <th md-column>Categoria</th>
-                                <th md-column colspan='' align='center'>acciones</th>
-                                <th md-column colspan='' align='center'>acciones</th>
+                                <th md-column md:order:by="name">Institución</th>
+                                <th md-column md:order:by="name">Reconocimiento</th>
+                                <th md-column md:order:by="name">Fecha</th>
+                                <th md-column>Lugar</th>
+                                <th md-column>Fuente</th>
+                                <th md-column colspan='2' align='center'>acciones</th>
                             </tr>
                         </thead>
                         <tbody md-body>
-                        <tr md-row ng-repeat="d in lista">
+                            <tr md-row ng-repeat="r in lista">
                                 <td md-cell>{{ (options.page - 1) * options.page_size +$index +1 }}</td>
-                                <td md-cell> {{ d.catedra }}</td>
-                                <td md-cell> {{ d.institucion }}</td>
-                                <td md-cell> {{ d.lugar }}</td>
-                                <td md-cell> {{ d.tipo_categoria }}</td>
+                                <td md-cell> {{ r.institucion }}</td>
+                                <td md-cell> {{ r.reconocimiento }}</td>
+                                <td md-cell> {{ r.fecha }}</td>
+                                <td md-cell> {{ r.lugar }}</td>
+                                <td md-cell> {{ r.fuente }}</td>
                                 <td md-cell>
-                                    <md-button class="md-icon-button" aria-label="Edit" ng-click="sel(d)">
-                                        <md-tooltip md-autohide>Edit {{ d.nombre }}</md-tooltip>
+                                    <md-button class="md-icon-button" aria-label="Edit" ng-click="sel(r)">
+                                        <md-tooltip md-autohide>Edit {{ r.nombre }}</md-tooltip>
                                         <ng-md-icon icon="edit" aria-label="Edit"></ng-md-icon>
                                     </md-button>
                                 </td>
                                 <td md-cell>
-                                    <md-button class="md-icon-button" aria-label="delete" ng-click="delete(d)">
-                                        <md-tooltip md-autohide>Delete {{ d.nombre }}</md-tooltip>
+                                    <md-button class="md-icon-button" aria-label="delete" ng-click="delete(r)">
+                                        <md-tooltip md-autohide>Delete {{ r.nombre }}</md-tooltip>
                                         <ng-md-icon icon="delete" aria-label="delete"></ng-md-icon>
                                     </md-button>
                                 </td>

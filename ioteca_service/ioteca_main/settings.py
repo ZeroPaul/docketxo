@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'ioteca_service_apps.auths',
     'ioteca_service_apps.auths_api',
     'ioteca_service_apps.docentes',
+    'ioteca_service_apps.reconocimientos',
     'ioteca_service_apps.experiencia',
 
 ]
