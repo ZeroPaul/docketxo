@@ -14,7 +14,7 @@ class ReconocimientosMdl(models.Model):
 
     institucion=models.CharField(max_length=100)
     reconocimiento=models.CharField(max_length=100)
-    fecha=models.DateTimeField()
+    fecha=models.DateField()
     lugar=models.CharField(max_length=100)
     fuente = models.CharField(max_length=100)
     #date_fin = models.DateTimeField(auto_now=True)
