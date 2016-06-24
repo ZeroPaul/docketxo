@@ -74,6 +74,12 @@ app
                 state: 'dock.experiencia',
                 type: 'link'
                 },
+
+                {
+                title: 'Reconocimientos',
+                state: 'dock.reconocimiento',
+                type: 'link'
+                },
             ]
         }]
     });
