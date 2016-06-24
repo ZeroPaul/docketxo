@@ -44,7 +44,13 @@ app
         url: "/experiencia",
         data: { section: 'DocketPro', page: 'Experiencia' },
         templateUrl: "ioteca_web_apps/docket/views/experiencia/index.html"
-    }) 
+    })
+
+    .state("dock.investigacion", {
+        url: "/investigacion",
+        data: { section: 'DocketPro', page: 'Investigacion' },
+        templateUrl: "ioteca_web_apps/docket/views/investigacion/index.html"
+    })
 
    
     ;

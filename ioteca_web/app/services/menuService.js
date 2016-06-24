@@ -80,6 +80,11 @@ app
                 state: 'dock.reconocimiento',
                 type: 'link'
                 },
+                                {
+                title: 'Investigacion',
+                state: 'dock.investigacion',
+                type: 'link'
+                },
             ]
         }]
     });
