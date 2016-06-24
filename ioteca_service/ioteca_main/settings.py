@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'ioteca_service_apps.docentes',
     'ioteca_service_apps.reconocimientos',
     'ioteca_service_apps.experiencia',
+    'ioteca_service_apps.investigacion',
 
 ]
 
