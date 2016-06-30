@@ -20,8 +20,8 @@ class ReconocimientosMdl(models.Model):
     #date_fin = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = "Reconocimiento Docente"
-        verbose_name_plural = "Reconocimientos Docente"
+        verbose_name = "Reconocimiento"
+        verbose_name_plural = "Reconocimientos"
 
     def __str__(self):
         return self.institucion

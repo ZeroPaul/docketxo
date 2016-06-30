@@ -3,7 +3,7 @@ app
     .controller("AppCtrl", function($scope, $mdSidenav, $timeout, $rootScope, $window,
     $document, $log, menuService, $mdBottomSheet, $mdToast, $location, toastr, authService, config) {
 
-    toastr.success('Consumer sign in successfully yolo', 'Message');
+    toastr.success('Consumer sign in successfully yolo!', 'Message');
 
 
     $scope.menu = menuService;

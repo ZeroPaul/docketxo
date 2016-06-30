@@ -4,8 +4,8 @@
             <md-card ng-controller="ReconocimientoCtrl">
                 <md-card-title>
                     <md-card-title-text>
-                        <span class="md-headline">Trabajar con Reconocimientos</span>
-                        <span class="md-subhead">CRUD Reconocimientos</span>
+                        <span class="md-headline">Reconocimientos</span>
+                        <span class="md-subhead">Listado de Reconocimientos</span>
                     </md-card-title-text>
                 </md-card-title>
                 <md-divider></md-divider>
@@ -26,7 +26,7 @@
                     </md-card-icon-actions>
                     <span flex></span>
                     <md-card-icon-actions layout-align="end center">
-                        <input placeholder="buscar" ng-model="query" ng-keyup="buscar()">
+                        <input placeholder="Buscar" ng-model="query" ng-keyup="buscar()">
                         <md-button class="md-icon-button" aria-label="Share">
                             <ng-md-icon icon="more_vert" aria-label="title"></ng-md-icon>
                         </md-button>
@@ -43,7 +43,7 @@
                                 <th md-column md:order:by="name">Fecha</th>
                                 <th md-column>Lugar</th>
                                 <th md-column>Fuente</th>
-                                <th md-column colspan='2' align='center'>acciones</th>
+                                <th md-column colspan='2' align='center'>+Acciones</th>
                             </tr>
                         </thead>
                         <tbody md-body>

@@ -98,6 +98,7 @@ app
     $scope.save = function() {
         if ($scope.menu.id) {
 
+         if ($window.confirm("¿Seguro que quieres guardar los cambios en el item '" + $scope.menu.id+ "'?")) {
             API.Reconocimiento.update({ id: $scope.menu.id }, $scope.menu).$promise.then(function(r) {
                 console.log("r: " + r);
                 //$scope.list();
@@ -105,8 +106,10 @@ app
             }, function(err) {
                 console.log("Err " + err);
             });
+          }
 
         } else {
+         if ($window.confirm("¿Seguro que quieres guardar como nuevo item?")) {   
             API.Reconocimiento.save($scope.menu).$promise.then(function(r) {
                 console.log("r: " + r);
                 //$scope.list();
@@ -114,11 +117,12 @@ app
             }, function(err) {
                 console.log("Err " + err);
             });
+          }
         }
     };
 
     $scope.delete = function(rq) {
-        if ($window.confirm("Seguro yolo que borras " + rq.catedra + "?")) {
+        if ($window.confirm("¿Seguro que quieres borrar el reconocimiento: '" + rq.id + ". " + rq.reconocimiento + "'?")) {
             API.Reconocimiento.delete({ id: rq.id }).$promise.then(function(r) {
                 console.log("r: " + r);
                 $scope.list(params);
