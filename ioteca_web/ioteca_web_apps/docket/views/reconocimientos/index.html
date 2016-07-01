@@ -1,14 +1,15 @@
 <div ng-cloak>
-    <md-content class="md-padding" layout-xs="column">
-        <div flex-xs flex-gt-xs>
+    <md-content class="gen-background" layout-xs="column">
+        <div flex-xs flex-gt-xs class="fbod3">
             <md-card ng-controller="ReconocimientoCtrl">
+              <div class="fbod2">
                 <md-card-title>
                     <md-card-title-text>
-                        <span class="md-headline">Reconocimientos</span>
-                        <span class="md-subhead">Listado de Reconocimientos</span>
+                        <span class="md-headline_ver2">Reconocimientos</span>
+                        <!-- <span class="md-subhead">Listado de Reconocimientos</span> -->
                     </md-card-title-text>
                 </md-card-title>
-                <md-divider></md-divider>
+                <!-- <md-divider></md-divider> -->
                 <md-card-actions layout="row" layout-align="start center" layout-xs="column">
                     <md-card-icon-actions>
                         <!--
@@ -20,7 +21,7 @@
                             Mostrar todo
                         </md-button>
                         <md-button class="md-fab md-mini md-warn" aria-label="Add" ng-click="new($event)">
-                            <md-tooltip md-autohide>Add</md-tooltip>
+                            <md-tooltip md-autohide>Agregar</md-tooltip>
                             <ng-md-icon icon="add" aria-label="title"></ng-md-icon>
                         </md-button>
                     </md-card-icon-actions>
@@ -33,6 +34,7 @@
                     </md-card-icon-actions>
                 </md-card-actions>
                 <md-divider></md-divider>
+                <div class="list-design_v2">
                 <md-table-container>
                     <table md-table data-md-row-select="" mi-table>
                         <thead md-head>
@@ -54,15 +56,15 @@
                                 <td md-cell> {{ r.fecha }}</td>
                                 <td md-cell> {{ r.lugar }}</td>
                                 <td md-cell> {{ r.fuente }}</td>
-                                <td md-cell>
-                                    <md-button class="md-icon-button" aria-label="Edit" ng-click="sel(r)">
-                                        <md-tooltip md-autohide>Edit {{ r.nombre }}</md-tooltip>
+                                <td md-cell class="gen-iconbutton2">
+                                    <md-button class="gen-iconbutton" aria-label="Edit" ng-click="sel(r)">
+                                        <md-tooltip md-autohide>Editar {{ r.nombre }}</md-tooltip>
                                         <ng-md-icon icon="edit" aria-label="Edit"></ng-md-icon>
                                     </md-button>
                                 </td>
-                                <td md-cell>
-                                    <md-button class="md-icon-button" aria-label="delete" ng-click="delete(r)">
-                                        <md-tooltip md-autohide>Delete {{ r.nombre }}</md-tooltip>
+                                <td md-cell class="gen-iconbutton2">
+                                    <md-button class="gen-iconbutton" aria-label="delete" ng-click="delete(r)">
+                                        <md-tooltip md-autohide>Eliminar {{ r.nombre }}</md-tooltip>
                                         <ng-md-icon icon="delete" aria-label="delete"></ng-md-icon>
                                     </md-button>
                                 </td>
@@ -70,6 +72,7 @@
                         </tbody>
                     </table>
                 </md-table-container>
+                </div>
                 <md-table-pagination>
                     <table>
                         <tfoot>
@@ -93,6 +96,7 @@
                         </tfoot>
                     </table>
                 </md-table-pagination>
+              </div>
             </md-card>
         </div>
     </md-content>

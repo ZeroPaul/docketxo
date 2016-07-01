@@ -35,7 +35,7 @@ app
 
     $scope.buscar = function() {
         params.page = 1;
-        params.fields = 'module,title,state';
+        params.fields = 'institucion,reconocimiento,lugar';
         params.query = $scope.query;
         params.page_size = $scope.per;
         $scope.list(params);
@@ -122,7 +122,7 @@ app
     };
 
     $scope.delete = function(rq) {
-        if ($window.confirm("¿Seguro que quieres borrar el reconocimiento: '" + rq.id + ". " + rq.reconocimiento + "'?")) {
+        if ($window.confirm("¿Seguro que quieres borrar el item: '" + rq.id + ". " + rq.reconocimiento + "'?")) {
             API.Reconocimiento.delete({ id: rq.id }).$promise.then(function(r) {
                 console.log("r: " + r);
                 $scope.list(params);
